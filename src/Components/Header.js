@@ -4,9 +4,7 @@ import TypeWriter from "react-typewriter";
 const Header = ({ data }) => {
   if (data) {
     var name = data.name;
-    var occupation = data.occupation;
     var description = data.description;
-    var city = data.address.city;
     var networks = data.social.map(function (network) {
       return (
         <li key={network.name}>
@@ -65,10 +63,11 @@ const Header = ({ data }) => {
       <div className="row banner">
         <div className="banner-text">
           <h1 className="responsive-headline">
-            <TypeWriter typing={0.5}>{name ? `I'm ${name}.` : null}</TypeWriter>
+            {name ? `I'm ${name}` : null}
           </h1>
           <h3>
-            Based in {city}. <span>{occupation}</span>. {description}.
+          <TypeWriter typing={1}>{description}</TypeWriter>
+          
           </h3>
           <hr />
           <ul className="social">{networks}</ul>

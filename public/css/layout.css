@@ -295,13 +295,23 @@ ul#nav li.current a { color: #F06000; }
   	margin-top: 36px;
    list-style: none;
 }
-.bars li {
+
+.bars ol {
+   
+   columns: 2;
+   -webkit-columns: 2;
+   -moz-columns: 2;
+   letter-spacing: 2px;
+	font-weight: normal;
+ }
+
+/* .bars li {
    position: relative;
   	margin-bottom: 60px;
   	background: #ccc;
   	height: 42px;
   	border-radius: 3px;
-}
+} */
 .bars li em {
 	font: 15px 'opensans-bold', sans-serif;
    color: #313131;
@@ -309,7 +319,6 @@ ul#nav li.current a { color: #F06000; }
    letter-spacing: 2px;
 	font-weight: normal;
    position: relative;
-	top: -36px;
 }
 .bar-expand {
    position: absolute;
@@ -323,6 +332,36 @@ ul#nav li.current a { color: #F06000; }
   	height: 42px;
    line-height: 42px;
    border-radius: 3px 0 0 3px;
+}
+
+
+.accomplish {
+	width: 95%;
+	float: left;
+	padding: 0;
+	text-align: left;
+}
+
+.accomplish li {
+   position: relative;
+  	margin-bottom: 45px;
+  	background: #ccc;
+  	height: 105px;
+  	border-radius: 5px;
+   padding: 10PX;
+}
+.accomplish li em {
+	font: 15px 'opensans-bold', sans-serif;
+   color: #313131;
+   letter-spacing: 2px;
+	font-weight: normal;
+   position: relative;
+}
+.accomplish li p {
+   color: #0c0c0c;
+   letter-spacing: 2px;
+	font-weight: normal;
+   position: relative;
 }
 /*
 .git {

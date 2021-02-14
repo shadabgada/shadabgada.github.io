@@ -2,7 +2,6 @@ import React from "react";
 
 const Resume = ({ data }) => {
   if (data) {
-    var skillmessage = data.skillmessage;
     var education = data.education.map(function (education) {
       return (
         <div key={education.school}>
@@ -28,13 +27,32 @@ const Resume = ({ data }) => {
       );
     });
     var skills = data.skills.map(function (skills) {
-      var className = "bar-expand " + skills.name.toLowerCase();
+      const skillList=getSkillList(skills.value);
       return (
         <li key={skills.name}>
-          <span style={{ width: skills.level }} className={className}></span>
           <em>{skills.name}</em>
+          <p>{skillList}</p>
         </li>
       );
+    });
+
+    function getSkillList(skills) {
+      return (
+        <ol>
+          {skills.map(skill => (
+            <li key={skill}>{skill}</li>
+          ))}
+        </ol>
+      );
+    }
+
+    var accomplishments = data.accomplishments.map((accomplishments)=>{
+      return (
+       <li>
+         <em>{accomplishments.title}</em>
+         <p>{accomplishments.desc}</p>
+       </li> 
+      )
     });
   }
 
@@ -72,13 +90,31 @@ const Resume = ({ data }) => {
         </div>
 
         <div className="nine columns main-col">
-          <p>{skillmessage}</p>
 
           <div className="bars">
-            <ul className="skills">{skills}</ul>
+            <ul >{skills}</ul>
           </div>
         </div>
       </div>
+
+      
+      <div className="row skill">
+        <hr></hr>
+        <div className="three columns header-col">
+          <h1>
+            <span>Accomplishments</span>
+          </h1>
+        </div>
+
+        <div className="nine columns main-col">
+          {/* <p>{accomplishments}</p> */}
+
+          <div className="accomplish">
+            <ul >{accomplishments}</ul>
+          </div>
+        </div>
+      </div>
+
     </section>
   );
 };
